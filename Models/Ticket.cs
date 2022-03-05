@@ -20,6 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+using System;
+using System.Collections;
+
 namespace Models
 {
     public class Ticket
@@ -39,7 +42,7 @@ namespace Models
         public string Description { get; set; }
         public Project Project { get; set; }
         public User Owner { get; set; }
-        public User AssignedTo { get; set; }
+        public User? AssignedTo { get; set; }
         public TicketStatus Status { get; set; }
         public List<Comment> Comments { get; set; } = new List<Comment>();
     }

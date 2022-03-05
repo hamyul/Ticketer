@@ -24,11 +24,11 @@ namespace Models
 {
     public class Comment
     {
-        public Comment(int id, User createdBy, DateTime createdOn, string text)
+        public Comment(int id, User createdBy, string text)
         {
             Id = id;
             CreatedBy = createdBy;
-            CreatedOn = createdOn;
+            CreatedOn = DateTime.Now;
             Text = text;
         }
 

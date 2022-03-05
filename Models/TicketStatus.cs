@@ -22,13 +22,13 @@
 
 namespace Models
 {
-    public static class TicketStatus
+    public enum TicketStatus
     {
-        public const string Created = "Created";
-        public const string InDevelopment = "In Development";
-        public const string Blocked = "Blocked";
-        public const string Canceled = "Canceled";
-        public const string Done = "Done";
+        Created,
+        InDevelopment,
+        Blocked,
+        Canceled,
+        Done
     }
 
 }

@@ -26,7 +26,12 @@ namespace Models
 {
     public class User
     {
+        public User()
+        {
+        }
+
         public User(int id, string name, string email, string password)
+            : this()
         {
             Id = id;
             Name = name;

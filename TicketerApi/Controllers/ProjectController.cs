@@ -8,23 +8,23 @@ using TicketerApi.Services;
 
 namespace TicketerApi.Controllers
 {
-    public class UserController : Controller
+    public class ProjectController : Controller
     {
-        private IGenericDataService<User> _dataService;
+        private IGenericDataService<Project> _dataService;
 
-        public UserController(ApplicationDbContext context)
+        public ProjectController(ApplicationDbContext context)
         {
             DataServiceFactory factory = new DataServiceFactory(context);
-            IDataService dataService = factory.GetDataService(typeof(User));
-            _dataService = dataService as IGenericDataService<User>;
+            IDataService dataService = factory.GetDataService(typeof(Project));
+            _dataService = dataService as IGenericDataService<Project>;
         }
 
-        [HttpPost("user")]
-        public async Task<ActionResult<User>> AddUser(User user)
+        [HttpPost("project")]
+        public async Task<ActionResult<Project>> AddProject(Project project)
         {
             try
             {
-                return Ok(await _dataService.AddAsync(user));
+                return Ok(await _dataService.AddAsync(project));
             }
             catch (Exception ex)
             {
@@ -32,12 +32,12 @@ namespace TicketerApi.Controllers
             }
         }
 
-        [HttpDelete("user")]
-        public async Task<ActionResult> DeleteUser(User user)
+        [HttpDelete("project")]
+        public async Task<ActionResult> DeleteProject(Project project)
         {
             try
             {
-                await _dataService.DeleteAsync(user);
+                await _dataService.DeleteAsync(project);
                 return Ok();
             }
             catch (Exception ex)
@@ -46,12 +46,12 @@ namespace TicketerApi.Controllers
             }
         }
 
-        [HttpPut("user")]
-        public async Task<ActionResult> EditUser(User user)
+        [HttpPut("project")]
+        public async Task<ActionResult> EditProject(Project project)
         {
             try
             {
-                await _dataService.EditAsync(user);
+                await _dataService.EditAsync(project);
                 return Ok();
             }
             catch (Exception ex)
@@ -61,7 +61,7 @@ namespace TicketerApi.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<ActionResult<List<User>>> GetUser()
+        public async Task<ActionResult<List<Project>>> GetProject()
         {
             try
             {
@@ -74,7 +74,7 @@ namespace TicketerApi.Controllers
         }
 
         [HttpGet("[action]/{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        public async Task<ActionResult<Project>> GetProject(int id)
         {
             try
             {

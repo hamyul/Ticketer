@@ -26,7 +26,12 @@ namespace Models
 {
     public class Project
     {
+        public Project()
+        {
+        }
+
         public Project(int id, string name)
+            : this()
         {
             Id = id;
             Name = name;

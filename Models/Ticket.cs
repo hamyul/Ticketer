@@ -28,7 +28,12 @@ namespace Models
 {
     public class Ticket
     {
+        public Ticket()
+        {
+        }
+
         public Ticket(int id, string title, string description, User owner, Project project)
+            : this()
         {
             Id = id;
             Title = title;

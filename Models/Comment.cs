@@ -26,7 +26,12 @@ namespace Models
 {
     public class Comment
     {
+        public Comment()
+        {
+        }
+
         public Comment(int id, User createdBy, string text)
+            : this()
         {
             Id = id;
             CreatedBy = createdBy;

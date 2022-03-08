@@ -7,7 +7,7 @@ using TicketerApi.Data;
 
 namespace TicketerApi.Services
 {
-    public class ProjectDataService : IDataService
+    public class ProjectDataService : IGenericDataService<Project>
     {
         private ApplicationDbContext _context;
 
